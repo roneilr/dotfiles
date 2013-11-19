@@ -1,10 +1,16 @@
 " The basics
 set number
-colorscheme desert
 syntax on
 set showmatch
 set ruler
 set cul
+
+" Solarized colors
+let g:solarized_bold=0
+let g:solarized_contrast = "high"
+let g:solarized_termtrans=1
+set background=dark
+colorscheme solarized
 
 " Search settings
 set hlsearch
