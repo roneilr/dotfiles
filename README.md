@@ -1,4 +1,4 @@
 dotfiles
 ========
 
-My configuration dotfiles
+Roneil Rumburg's configuration dotfiles.
