@@ -1,0 +1,30 @@
+[include]
+  path = ~/.gitconfig-local
+
+[alias]
+  a = add
+  ai = add --interactive
+
+  c = commit
+  cm = commit -m
+  cam = commit -a -m
+  ca = commit --amend # prompt for message
+  caa = commit -a --amend -C HEAD # do not prompt for message
+
+  rs = reset
+  rsh = reset --hard
+
+  rb = rebase
+  rbi = rebase --interactive
+
+  s = status
+  d = diff
+  co = checkout
+  cl = clone
+  b = branch
+  l = log
+
+  f = fetch
+  ps = push
+  pl = pull
+  plr = pull --rebase

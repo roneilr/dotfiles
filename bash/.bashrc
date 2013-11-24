@@ -54,3 +54,6 @@ tab() {
 # tmux aliases
 alias tma='tmux attach -d -t'
 alias git-tmux='tmux new -s $(basename $(pwd))'
+
+# git -> g
+alias g='git'
