@@ -9,8 +9,9 @@ Roneil Rumburg's configuration dotfiles.
 
     cd dotfiles
 
-    # install a specific package
+    # install all dotfiles
+    ./setup.bash
+
+    # install specific dotfile collection
+    # (you may need to do extra setup for vim, see setup.bash)
     stow [package name]
-    
-    # install everything
-    stow *
