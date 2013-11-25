@@ -6,25 +6,50 @@ set ruler
 set cul
 set nocompatible
 
+" Use ',' as the leader character for mappings
+let mapleader = ','
+
 " NeoBundle setup
 set runtimepath+=~/.vim/bundle/neobundle.vim
 call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" NeoBundle addons
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'bling/vim-airline'
-
-" Vim-airline options
-let g:airline_powerline_fonts = 1
-set laststatus=2
-
 " Solarized colorscheme
-let g:solarized_bold=0
+NeoBundle 'altercation/vim-colors-solarized'
+let g:solarized_bold = 0
 let g:solarized_contrast = "high"
-let g:solarized_termtrans=1
+let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
+
+" Show guides for indent levels
+NeoBundle 'nathanaelkane/vim-indent-guides'
+nmap <leader>i :IndentGuidesToggle<CR>
+
+" comment visual blocks with 'gc'
+NeoBundle 'tpope/vim-commentary'
+
+" automatically insert ending statements (ex. esac or fi in bash)
+NeoBundle 'tpope/vim-endwise'
+
+" Show diff in gutter
+NeoBundle 'airblade/vim-gitgutter'
+nmap <leader>g :GitGutterToggle<CR>
+let g:gitgutter_enabled = 0
+
+" File browser addons
+NeoBundle 'scrooloose/nerdtree' " simple file browser
+NeoBundle 'kien/ctrlp.vim' " fuzzy file searcher
+nmap <leader>d :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
+nmap <leader>t :CtrlP<CR>
+nmap <leader>b :CtrlPBuffer<CR>
+nmap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
+
+" Vim-airline
+NeoBundle 'bling/vim-airline'
+let g:airline_powerline_fonts = 1
+set laststatus=2
 
 " Search settings
 set hlsearch
@@ -48,7 +73,3 @@ set showmatch
 set vb
 " I autocomplete like bash
 set wildmode=longest,list
-" Comment (visual bloc)
-" Highlight a bloc and press ;c or ;j. The bloc is commented
-vmap ;c <ESC>`<i/*<cr><ESC>`>a<cr>*/<ESC>
-vmap ;j <ESC>`<i/**<cr><ESC>`>a<cr>*/<ESC>

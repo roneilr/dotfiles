@@ -17,3 +17,6 @@ fi
 
 # Symlink dotfiles into place
 stow bash ssh tmux vim
+
+# install vim plugins
+vim +NeoBundleInstall +q
