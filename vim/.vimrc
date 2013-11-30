@@ -4,6 +4,7 @@ syntax on
 set showmatch
 set ruler
 set cul
+set vb
 set nocompatible
 
 " Use ',' as the leader character for mappings
@@ -40,6 +41,7 @@ let g:gitgutter_enabled = 0
 " File browser addons
 NeoBundle 'scrooloose/nerdtree' " simple file browser
 NeoBundle 'kien/ctrlp.vim' " fuzzy file searcher
+let NERDTreeShowHidden = 1
 nmap <leader>d :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
 nmap <leader>t :CtrlP<CR>
@@ -49,13 +51,30 @@ nmap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 " Vim-airline
 NeoBundle 'bling/vim-airline'
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_nr_type = 1
 set laststatus=2
+
+" Tab creation/navigation shortcuts (",#" to jump to tab #)
+nmap <leader>c :tabedit<CR>:NERDTreeCWD<CR>
+nmap <leader>n :tabnext<CR>
+nmap <leader>p :tabprevious<CR>
+let numcount = 1
+while numcount <= 9
+  execute "nmap <leader>" . numcount . " " . numcount . "gt"
+  let numcount += 1
+endwhile
 
 " Search settings
 set hlsearch
 set scrolloff=5
 set incsearch
 set ignorecase
+set smartcase
+
+" Tab completion for commands
+set wildmenu
+set wildmode=longest:full,full
 
 " Tab settings
 set expandtab
@@ -66,10 +85,5 @@ set textwidth=80
 set autoindent
 filetype plugin indent on
 
-" Settings selected from http://esi.namok.be/brol/vim/vimrc.html
-" See parenthesis balance
-set showmatch
-" Set visual bell (turn off the beep sounds and replace it by flash screen)
-set vb
-" I autocomplete like bash
-set wildmode=longest,list
+" Verify NeoBundle installation
+NeoBundleCheck
