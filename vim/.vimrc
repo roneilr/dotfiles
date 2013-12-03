@@ -38,6 +38,9 @@ NeoBundle 'airblade/vim-gitgutter'
 nmap <leader>g :GitGutterToggle<CR>
 let g:gitgutter_enabled = 0
 
+" Git helpers (Gdiff, Gblame, Gread, Gwrite, etc.)
+NeoBundle 'tpope/vim-fugitive'
+
 " File browser addons
 NeoBundle 'scrooloose/nerdtree' " simple file browser
 NeoBundle 'kien/ctrlp.vim' " fuzzy file searcher
@@ -53,6 +56,7 @@ NeoBundle 'bling/vim-airline'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#branch#enabled = 1
 set laststatus=2
 
 " Tab creation/navigation shortcuts (",#" to jump to tab #)
