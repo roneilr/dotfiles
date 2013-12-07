@@ -60,7 +60,7 @@ let g:airline#extensions#branch#enabled = 1
 set laststatus=2
 
 " Tab creation/navigation shortcuts (",#" to jump to tab #)
-nmap <leader>c :tabedit<CR>:NERDTreeCWD<CR>
+nmap <leader>c :tabnew<CR>
 nmap <leader>n :tabnext<CR>
 nmap <leader>p :tabprevious<CR>
 let numcount = 1
