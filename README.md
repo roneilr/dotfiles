@@ -9,17 +9,14 @@ Roneil Rumburg's configuration dotfiles.
 
     cd dotfiles
 
-    # install all dotfiles
+    # run setup script (asks what to install)
     ./setup.bash
-
-    # install specific dotfile collection
-    # (you may need to do extra setup for vim, see setup.bash)
-    stow [package name]
 
 You will also need to configure your terminal emulator to use a font patched for
 powerline (see https://github.com/Lokaltog/powerline-fonts for some pre-patched
 fixed-width fonts) and to use the solarized color scheme (see
-http://ethanschoonover.com/solarized).
+http://ethanschoonover.com/solarized). The "osx" extra option prompts for both of
+these.
 
 ## Updates:
     # update all vim plugins
