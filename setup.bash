@@ -16,7 +16,7 @@ if [ ! -e ~/.gitconfig-local ]; then
 fi
 
 # Symlink dotfiles into place
-stow bash ssh tmux vim
+stow bash git ssh tmux vim
 
 # install vim plugins
 vim +NeoBundleInstall +q
