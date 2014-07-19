@@ -6,8 +6,7 @@ fi
 
 export TERM=xterm-256color
 
-# first character is ASCII for move cursor to beginning of line
-export PS1="\[\033[G\]\[[33m\]\A \[[32m\]\u@\h \[[34m\]\w \$ \[[0m\]"
+export PS1="\[[33m\]\A \[[32m\]\u@\h \[[34m\]\w \$ \[[0m\]"
 export PATH=$PATH:~/Scripts
 
 ### Aliases and function helpers ###
