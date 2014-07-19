@@ -59,15 +59,21 @@ let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#branch#enabled = 1
 set laststatus=2
 
+" Extra syntax plugins
+NeoBundle 'tpope/vim-markdown'
+
 " Tab creation/navigation shortcuts (",#" to jump to tab #)
 nmap <leader>c :tabnew<CR>
 nmap <leader>n :tabnext<CR>
-nmap <leader>p :tabprevious<CR>
+nmap <leader>v :tabprevious<CR>
 let numcount = 1
 while numcount <= 9
   execute "nmap <leader>" . numcount . " " . numcount . "gt"
   let numcount += 1
 endwhile
+
+" General vim shortcuts
+nmap <leader>p :set paste!<CR>
 
 " Search settings
 set hlsearch
@@ -85,7 +91,7 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 au FileType python setl sw=4 sts=4 et
-set textwidth=80
+set textwidth=90
 set autoindent
 filetype plugin indent on
 
