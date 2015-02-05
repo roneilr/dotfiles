@@ -18,9 +18,6 @@ alias la='ls -A'
 alias l='ls -CF'
 alias countfiles='for t in files links directories; do echo `find . -type ${t:0:1} | wc -l` $t; done 2> /dev/null'
 
-# Text Editing
-alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
-
 # Pretty print code
 alias enscript_c='enscript -q -B -C -Ec -G --color --word-wrap -f Courier9 -MLetter -p - $@'
 alias enscript_python='enscript -q -B -C -Epython -G --color --word-wrap -f Courier9 -MLetter -p - $@'
@@ -44,15 +41,13 @@ tab() {
         end tell"
 }
 
-# outdated Debian VM
-#alias sshdev='ssh roneil@172.16.166.133 $@'
-#alias sshrootdev='ssh root@172.16.166.133 $@'
-#alias startdev='/Library/Application\ Support/VMware\ Fusion/vmrun start ~/Documents/Virtual\ Machines.localized/Debian\ 5\ 64-bit.vmwarevm/Debian\ 5\ 64-bit.vmx nogui'
-#alias stopdev='sshrootdev shutdown -h now'
-
 # tmux aliases
 alias tma='tmux attach -d -t'
 alias git-tmux='tmux new -s $(basename $(pwd))'
 
 # git -> g
 alias g='git'
+
+if [ -x ~/.bashrc_local ]; then
+    . ~/.bashrc_local
+fi
