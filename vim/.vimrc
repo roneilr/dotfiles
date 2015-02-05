@@ -12,16 +12,11 @@ let mapleader = ','
 
 " NeoBundle setup
 set runtimepath+=~/.vim/bundle/neobundle.vim
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Solarized colorscheme
 NeoBundle 'altercation/vim-colors-solarized'
-let g:solarized_bold = 0
-let g:solarized_contrast = "high"
-let g:solarized_termtrans = 1
-set background=dark
-colorscheme solarized
 
 " Show guides for indent levels
 NeoBundle 'nathanaelkane/vim-indent-guides'
@@ -93,6 +88,18 @@ set softtabstop=2
 au FileType python setl sw=4 sts=4 et
 set textwidth=90
 set autoindent
+
+" End NeoBundle configuration (no calls to NeoBundle below this line)
+call neobundle#end()
+
+" Finish colorscheme initialization
+let g:solarized_bold = 0
+let g:solarized_contrast = "high"
+let g:solarized_termtrans = 1
+set background=dark
+colorscheme solarized
+
+" Required per NeoBundle docs
 filetype plugin indent on
 
 " Verify NeoBundle installation
