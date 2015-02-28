@@ -14,6 +14,10 @@ if install_ask "bash"; then
   stow bash
 fi
 
+if install_ask "curl"; then
+  stow curl
+fi
+
 if install_ask "git"; then
   # create .gitconfig-local if it doesn't exist
   if [ ! -e ~/.gitconfig-local ]; then
