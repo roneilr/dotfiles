@@ -10,6 +10,9 @@ set nocompatible
 " Use ',' as the leader character for mappings
 let mapleader = ','
 
+" Ignore compiled files
+set wildignore=*.o,*.pyc
+
 " NeoBundle setup
 set runtimepath+=~/.vim/bundle/neobundle.vim
 call neobundle#begin(expand('~/.vim/bundle/'))
