@@ -4,6 +4,8 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
+export HISTFILESIZE=20000
+
 export TERM=xterm-256color
 
 export PS1="\[[33m\]\A \[[32m\]\u@\h \[[34m\]\w \$ \[[0m\]"
