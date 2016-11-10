@@ -39,7 +39,7 @@ if install_ask "osx"; then
   fi
 
   if install_ask "fonts"; then
-    open osx/fonts/*
+    open fonts/*
   fi
 
   if install_ask "iterm"; then
@@ -47,7 +47,19 @@ if install_ask "osx"; then
   fi
 fi
 
+if install_ask "xfce"; then
+  mkdir -p ~/.config/xfce4/terminal
+  stow xfce
+
+  if install_ask "fonts"; then
+    mkdir -p ~/.fonts
+    cp fonts/* ~/.fonts
+    sudo fc-cache -f -v
+  fi
+fi
+
 if install_ask "ssh"; then
+  mkdir -p ~/.ssh
   stow ssh
 fi
 
