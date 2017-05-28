@@ -1,8 +1,8 @@
-clear control
+clear Control
+clear Lock
 clear mod1
-clear mod4
-keycode 37 = Alt_L Meta_L
+keycode 66 = Control_L
+keycode 37 = Alt_L
 keycode 64 = Control_L
-keycode 133 = Control_L
-add control = Control_L Control_R
-add mod1 = Alt_L Meta_L
+add Control = Control_L Control_R
+add mod1 = Alt_L Alt_R
