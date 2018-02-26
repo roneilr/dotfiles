@@ -19,6 +19,7 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 alias countfiles='for t in files links directories; do echo `find . -type ${t:0:1} | wc -l` $t; done 2> /dev/null'
+hash_folder() { find $1 -type f -exec md5sum {} \; | cut -d " " -f 1 | sort| md5sum; }
 
 # Pretty print code
 alias enscript_c='enscript -q -B -C -Ec -G --color --word-wrap -f Courier9 -MLetter -p - $@'
