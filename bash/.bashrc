@@ -30,25 +30,19 @@ alias enscript_python='enscript -q -B -C -Epython -G --color --word-wrap -f Cour
 # useful tools
 alias servedir='python -m SimpleHTTPServer'
 
-# open command in new tab in iTerm
-tab() {
-        osascript -e "
-        tell application \"iTerm\"
-         tell the first terminal
-          set currentSession to current session
-          launch session \"Default Session\"
-          tell the last session
-           write text \"cd $(pwd)\"
-           write text \"$*\"
-          end tell
-          select currentSession
-         end tell
-        end tell"
-}
-
 # tmux aliases
 alias tma='tmux attach -d -t'
 alias git-tmux='tmux new -s $(basename $(pwd))'
+
+backup() {
+  read -p "Backing up to '$1'. Will overwrite. Continue (y/n)? " choice
+  if [[ "$choice" != "y" ]]; then
+    echo "Aborting."
+    return 1
+  fi
+  # network drives do not support symlinks
+  rsync -ra --no-links --exclude '.cache/dconf' --exclude '.gvfs' --progress --delete /home/roneil $1
+}
 
 # git -> g
 alias g='git'
