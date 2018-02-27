@@ -41,7 +41,7 @@ backup() {
     return 1
   fi
   # network drives do not support symlinks
-  rsync -ra --no-links --exclude '.cache/dconf' --exclude '.gvfs' --progress --delete /home/roneil $1
+  rsync -ra --no-links --exclude '.cache' --exclude '.gvfs' --progress --delete /home/roneil $1
 }
 
 # git -> g
