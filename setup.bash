@@ -14,10 +14,6 @@ if install_ask "bash"; then
   stow bash
 fi
 
-if install_ask "curl"; then
-  stow curl
-fi
-
 if install_ask "git"; then
   # create .gitconfig-local if it doesn't exist
   if [ ! -e ~/.gitconfig-local ]; then
@@ -32,12 +28,6 @@ if install_ask "git"; then
 fi
 
 if install_ask "osx"; then
-  ./osx/defaults.sh
-
-  if install_ask "enable trim"; then
-    ./osx/trim_enabler.sh
-  fi
-
   if install_ask "fonts"; then
     open fonts/*
   fi
