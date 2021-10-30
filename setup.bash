@@ -25,6 +25,9 @@ if install_ask "git"; then
   fi
 
   stow git
+
+  # clean up git-prompt file
+  rm ~/git-prompt.sh
 fi
 
 if install_ask "osx"; then
