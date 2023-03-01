@@ -32,7 +32,8 @@ alias servedir='python -m SimpleHTTPServer'
 
 # tmux aliases
 alias tma='tmux attach -d -t'
-alias git-tmux='tmux new -s $(basename $(pwd))'
+alias tmc='tmux new -s $(basename $(pwd))'
+alias tml='tmux list-sessions'
 
 backup() {
   read -p "Backing up to '$1'. Will overwrite. Continue (y/n)? " choice
