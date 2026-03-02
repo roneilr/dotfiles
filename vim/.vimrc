@@ -6,6 +6,7 @@ set ruler
 set cul
 set vb
 set nocompatible
+set re=0
 
 " Use ',' as the leader character for mappings
 let mapleader = ','
